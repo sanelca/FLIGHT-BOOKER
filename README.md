@@ -1,4 +1,4 @@
-# FLight booker
+# Flight booker
 
 A ruby on rails application for booking airline tickers
 
