@@ -1,24 +1,11 @@
-# README
+# FLight booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A ruby on rails application for booking airline tickers
 
-Things you may want to cover:
+### Steps
 
-* Ruby version
+1. clone repository
+2. run bundle command
+3. run rails server
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
