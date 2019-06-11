@@ -1,0 +1,19 @@
+<h1>Bookings</h1>
+
+Upcoming Reservations:
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= link_to "Booking ##{booking.id}", booking %> |
+      Flying out of: <%= booking.flight.departure_airport.name %> |
+      Flying to: <%= booking.flight.arrival_airport.name %> |
+      Departure time: <%= booking.flight.departure_time %> |
+      Flight duration: <%= booking.flight.duration %>
+      Passengers: <% booking.passengers.each do |p| %>
+        <%= p.name %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Find another flight", flights_path %>

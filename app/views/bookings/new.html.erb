@@ -1,0 +1,29 @@
+<h1>Booking Information</h1>
+
+<div>
+  <%= form_for(@booking) do |f| %>
+  <%= f.hidden_field :flight_id, value: params[:flight_id] %>
+
+    Departing from: <%= @flight.departure_airport.name %> |
+    Arriving to: <%= @flight.arrival_airport.name %> |
+    Date: <%= @flight.departure_time %> |
+    <%= pluralize(@num_passengers, "passenger") %>
+
+    <ul>
+      <%= f.fields_for :passengers do |passenger_form| %>
+        <li>
+          <%= passenger_form.label :name %>
+          <%= passenger_form.text_field :name, required: true %>
+          <%= passenger_form.label :email %>
+          <%= passenger_form.email_field :email, required: true %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div>
+      <%= submit_tag "Create Booking" %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to search", flights_path %>
