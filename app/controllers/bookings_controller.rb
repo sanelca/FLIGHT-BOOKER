@@ -15,10 +15,8 @@ class BookingsController < ApplicationController
       flash[:success] = "Booking created!"
       redirect_to @booking
     else
-      @flight = Flight.find(booking_params[:flight_id].to_i)
-      if match = /\d/.match(params[:num_passengers])
-        @num_passengers = match.captures.first.to_i
-      end
+      @flight = Flight.find(booking_params[:flight_id])
+      @num_passengers = params[:num_passengers]
       render 'new'
     end
   end
@@ -34,5 +32,5 @@ class BookingsController < ApplicationController
   private
     def booking_params
       params.require(:booking).permit(:flight_id, passengers_attributes: [:id, :name, :email, :booking_id])
-    end  
+    end
 end

@@ -3,19 +3,19 @@
 <%= form_tag(flights_path, method: :get) do %>
   <div class = "form row">
     <%= label_tag "Departs from:" %>
-    <%= select_tag(:departure_airport_id, options_for_select(@airports_options, params[:departure_airport_id])) %>
+    <%= select_tag(:departure_airport_id, options_for_select(airports_options, params[:departure_airport_id])) %>
   </div>
   <div class = "form row">
     <%= label_tag "Arrives at:" %>
-    <%= select_tag(:arrival_airport_id, options_for_select(@airports_options, params[:arrival_airport_id])) %>
+    <%= select_tag(:arrival_airport_id, options_for_select(airports_options, params[:arrival_airport_id])) %>
   </div>
   <div class = "form row">
     <%= label_tag "Departure date:" %>
-    <%= select_tag(:departure_time, options_for_select(@departure_time_options, params[:departure_time])) %>
+    <%= select_tag(:departure_time, options_for_select(departure_time_options, params[:departure_time])) %>
   </div>
   <div class = "form row">
     <%= label_tag "Number of passengers:" %>
-    <%= select_tag(:num_passengers, options_for_select(@num_passenger_options, params[:num_passengers])) %>
+    <%= select_tag(:num_passengers, options_for_select(num_passenger_options, params[:num_passengers])) %>
   </div>
 
   <div class = "form">
