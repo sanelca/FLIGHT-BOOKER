@@ -1,0 +1,17 @@
+<h1>Booking information</h1>
+
+<ol>
+  <li>Flying out of: <%= @booking.flight.departure_airport.name %></li>
+  <li>Flying to: <%= @booking.flight.arrival_airport.name %></li>
+  <li>Departure time: <%= @booking.flight.departure_time %></li>
+  <li>Flight duration: <%= @booking.flight.duration %></li>
+  <li>
+    Passengers:
+    <ul>
+      <% @booking.passengers.each do |p| %>
+      <li> <%= p.name %> </li>
+      <% end %>
+      </ul>
+  </li>
+</ol>
+<%= link_to "See all bookings", bookings_path %>
